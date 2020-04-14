@@ -1,0 +1,4 @@
+﻿  project game 2.cpp
+D:\dung dep trai\cuder\project game 2\project game 2\project game 2.cpp(43,2): warning C4551: function call missing argument list
+D:\dung dep trai\cuder\project game 2\project game 2\project game 2.cpp(9,15): warning C4101: 'surf': unreferenced local variable
+  project game 2.vcxproj -> D:\dung dep trai\cuder\project game 2\Debug\project game 2.exe
