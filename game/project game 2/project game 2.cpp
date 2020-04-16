@@ -9,8 +9,13 @@ int main() {
 	SDL_Surface* surf;
 	SDL_CreateWindowAndRenderer(840, 464,0, &window, &render);
 	SDL_SetWindowTitle(window, "GREY GAMING");
-	SDL_RenderCopy(render, loadImage("backgrtest.png", render), NULL, NULL);
+	SDL_Rect start, start1;
+	start.x = 0, start.y = 0, start.w = 1360, start.h = 567;
+	start1.x = 0, start1.y = 0, start1.w = 1360, start1.h = 567;
+	SDL_RenderCopy(render, loadImage("backgrtest.png", render), &start,&start1);
+	SDL_RenderPresent(render);
 	waitUntilKeyPressed();
+	SDL_RenderClear(render);
 	SDL_Rect back, back1;
 	SDL_Rect car, car1;
 	back.x = 0, back.y = 0,back.w = 1291, back.h = 464;
@@ -22,14 +27,17 @@ int main() {
 	string path1 = "carfinal.png";
 	string path2 = "carfinal1.png";
 	string path;
-	while (running) {
+	string text = getText();
+	cout << text << endl;
+	int dem = 0; 
+	while (running) { 
 		if (car1.x > 50) {
 			if (back1.x < -440) back1.x += 0;
 			else back1.x -= 50;
 		}
 		SDL_RenderCopy(render, loadImage("backgr.png", render), &back, &back1);
 		SDL_RenderPresent(render);
-		car1.x += 40;
+		car1.x += 20;
 		if (time % 2 == 0) path = path1;
 		else path = path2;
 		time++;
@@ -38,7 +46,6 @@ int main() {
 		if (back1.x < -400) running = 0;
 		waitUntilKeyPressed();
 		SDL_RenderClear(render);
-		
 	}
 	SDL_Quit;
 	return 0;

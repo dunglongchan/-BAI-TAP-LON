@@ -7,5 +7,12 @@ cho một đoạn text, người chơi sẽ phải gõ đúng từng kí tự tr
 __________________________________________________
 UPDATE 14/4
 
+tạo 1 backgr dài, tạo thêm hoạt ảnh chuyển động cho xe
 press any key để xe bắt đầu di chuyển, xe di chuyển đến giữa màn hình thì back gr cũng bắt đầu di chuyển.
+__________________________________________________
+UPDATE 16.4
+
+nhập xuất với tệp
+random 1 đoạn text bất kì từ file cho trước sau đó in ra màn hình
+__________________________________________________
 
