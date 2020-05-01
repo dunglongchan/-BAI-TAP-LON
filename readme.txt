@@ -21,3 +21,7 @@ cập nhật đoạn text, chia text theo độ khó để chọn độ khó.
 hiển thị đoạn text, gõ đúng kí tự xe mới di chuyển, có thêm mạng(gõ sai 1 kí tự trừ một mạng, nếu mạng nhỏ hơn 5, gõ đúng 10 kí tự liên tiếp được công thêm 1 mạng), gõ hết đoạn text thì win.
 debug lại lỗi tăng bộ nhớ khi render back và nhân vật.
 __________________________________________________
+UPDTAE 29/4
+
+hoàn thành toàn bộ game và các tính năng
+
