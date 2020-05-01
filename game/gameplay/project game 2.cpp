@@ -8,11 +8,11 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) return -1;
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) return -1;
 	SDL_Renderer* renderer;
 	SDL_Window* window;
 	window = SDL_CreateWindow("Gray say hello", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 900, 600, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) return -1;
 
 	SDL_Event event;
 	SDL_PollEvent(&event);
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 
 	do {
 		string ptr;
-		Uint32 timeout = SDL_GetTicks() + 15000;
+		Uint32 timeout = SDL_GetTicks() + 20000;
 		int score = 0;
 		backgrmusic();
 		bool gameplay = true;
@@ -157,7 +157,6 @@ int main(int argc, char* argv[]) {
 			}
 			if (gameplay == false)
 			{
-				//Mix_Pause(-1);
 				Mix_PauseMusic();
 				highscore.push_back(score);
 				int n = highscore.size();
