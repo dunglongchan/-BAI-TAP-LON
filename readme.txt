@@ -25,3 +25,8 @@ UPDTAE 29/4
 
 hoàn thành toàn bộ game và các tính năng
 
+__________________________________________________
+NGUỒN THAM KHẢO CODE
+
+hàm Drawtext , hàm sound effects : www.stdio.vn
+
