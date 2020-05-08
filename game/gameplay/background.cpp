@@ -5,14 +5,14 @@ using namespace std;
 	SDL_Texture* background:: loadImage(string fileAnh, SDL_Renderer* renderer)
 	{
 		SDL_Surface* surf = IMG_Load(fileAnh.c_str());
-		SDL_Texture* tex;
-		tex = SDL_CreateTextureFromSurface(renderer, surf);
+		SDL_Texture* tex = SDL_CreateTextureFromSurface(renderer, surf);
 		return tex;
 	}
 	void background::startload(SDL_Renderer* renderer)
 	{
 		start.x = 0, start.y = 0, start.w = 900, start.h = 600;
 		start1.x = 0, start1.y = 0, start1.w = 900, start1.h = 600;
+
 		SDL_RenderCopy(renderer, loadImage("start.png", renderer), &start, &start1);
 		SDL_RenderPresent(renderer);
 		SDL_RenderClear;

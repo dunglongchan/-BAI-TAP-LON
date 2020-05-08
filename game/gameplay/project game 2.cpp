@@ -115,7 +115,6 @@ int main(int argc, char* argv[]) {
 			default:
 				break;
 			}
-
 			score += checker * 0, 5;
 
 			back.dichuyenback();
@@ -167,7 +166,7 @@ int main(int argc, char* argv[]) {
 				drawtext(renderer, tmp2, 40, 400, 295, fg, "font-chu-cua-yelp.otf");
 				drawtext(renderer, tmp3, 40, 400, 395, fg, "font-chu-cua-yelp.otf");
 				SDL_RenderPresent(renderer);
-				playagian();
+				playagain();
 			}
 		} while (gameplay == true);
 		while (SDL_PollEvent(&event))
@@ -180,14 +179,13 @@ int main(int argc, char* argv[]) {
 				break;
 			}
 		}
-		playagian();
-		Mix_PauseMusic();
+		playagain();
+		Mix_HaltMusic();
 		running == true;
 		SDL_RenderClear(renderer);
 		back.startload(renderer);
 		waitUntilKeyPressed();
 	} while (running == true);
-
 	back.phahuy();
 	car.phahuy();
 	SDL_DestroyRenderer(renderer);

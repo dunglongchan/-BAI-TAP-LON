@@ -28,7 +28,7 @@ string getText()
     else return "";
 }
 
-void waitUntilKeyPressed()
+void waitUntilKeyPressed() // code trong silde cua co
 {
     SDL_Event e;
     while (true) {
@@ -39,7 +39,8 @@ void waitUntilKeyPressed()
     }
 }
 
-void drawtext(SDL_Renderer* renderer, string text,int size,int desX,int desY, SDL_Color fg,string fontname) {
+void drawtext(SDL_Renderer* renderer, string text,int size,int desX,int desY, SDL_Color fg,string fontname) // copy o stdio.vn
+{
     TTF_Font* font = NULL;
     SDL_Surface* surface = NULL;
     SDL_Texture* texture = NULL;
@@ -64,8 +65,7 @@ void health(SDL_Renderer* renderer, int n)
     src.x = 0, src.y = 0, src.w = 50, src.h = 50;
     des.x = 850, des.y = 0, des.w = 50, des.h = 50;
     SDL_Surface* surf = IMG_Load("heart.png");
-    SDL_Texture* tex;
-    tex = SDL_CreateTextureFromSurface(renderer, surf);
+    SDL_Texture* tex= SDL_CreateTextureFromSurface(renderer, surf);
     for (int i = 0; i < n; i++) {
         SDL_RenderCopy(renderer,tex, &src, &des);
         des.x -= 50;
@@ -152,47 +152,42 @@ void backgrmusic()
     backgrmusic = Mix_LoadMUS(name.c_str());
     Mix_PlayMusic(backgrmusic, -1);
 }
-void ticktock() 
+void ticktock()
 {
     Mix_Chunk* tiktok = NULL;
-    tiktok= Mix_LoadWAV("ticktock.mp3");
-    Mix_PlayChannel(-1, tiktok, 0,-1);
+    tiktok = Mix_LoadWAV("ticktock.mp3");
+    Mix_PlayChannel(-1, tiktok, 0);
 }
 
 void firesound()
 {
-    Mix_Chunk* tiktok = NULL;
-    tiktok = Mix_LoadWAV("fire.mp3");
+    Mix_Chunk* tiktok = Mix_LoadWAV("fire.mp3");
     Mix_PlayChannel(-1, tiktok, 0);
 }
 
 void endgamesound()
 {
-    Mix_Music* tiktok = NULL;
-    tiktok = Mix_LoadMUS("highscore.mp3");
+    Mix_Music* tiktok = Mix_LoadMUS("highscore.mp3");
     Mix_PlayMusic( tiktok, 0);
 }
 
 void endgamesound2()
 {
-    Mix_Music* tiktok = NULL;
-    tiktok = Mix_LoadMUS("lose.mp3");
+    Mix_Music* tiktok= Mix_LoadMUS("lose.mp3");
     Mix_PlayMusic(tiktok, 0);
 }
 
 void policesound()
 {
-    Mix_Chunk* tiktok = NULL;
-    tiktok = Mix_LoadWAV("police.mp3");
+    Mix_Chunk* tiktok = Mix_LoadWAV("police.mp3");
     Mix_PlayChannel(-1, tiktok, 0);
 }
 void buff()
 {
-    Mix_Chunk* buff = NULL;
-    buff = Mix_LoadWAV("buff.mp3");
+    Mix_Chunk* buff = Mix_LoadWAV("buff.mp3");
     Mix_PlayChannel(-1, buff, 0);
 }
-void playagian()
+void playagain()
 {
     SDL_Event e;
     while (true) {
