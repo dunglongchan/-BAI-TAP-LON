@@ -20,7 +20,6 @@ int main(int argc, char* argv[]) {
 	nhanvat car;
 	back.texture = back.loadImage("back1.png", renderer);
 	car.texture = car.loadImage("car.png", renderer);
-	SDL_PollEvent(&event);
 	bool running = true;
 	back.startload(renderer);
 	waitUntilKeyPressed();
@@ -30,7 +29,7 @@ int main(int argc, char* argv[]) {
 
 	do {
 		string ptr;
-		Uint32 timeout = SDL_GetTicks() + 20000;
+		Uint32 timeout = SDL_GetTicks() + 20000; 
 		int score = 0;
 		backgrmusic();
 		bool gameplay = true;
@@ -137,7 +136,6 @@ int main(int argc, char* argv[]) {
 
 			if (dem == dodaitext)
 			{
-				police(renderer, 5 - luot);
 				text = getText();
 				dodaitext = text.length();
 				ptr = "";
@@ -189,6 +187,7 @@ int main(int argc, char* argv[]) {
 	back.phahuy();
 	car.phahuy();
 	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
 	Mix_CloseAudio();
 	SDL_Quit();
 	return 0;
